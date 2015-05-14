@@ -126,6 +126,7 @@ class dhondt():
             #bvcensus = True
             #nabs = self.census - vtot - self.blankv - self.sploitv
         # Sort the candidatures in descending number of votes
+        vtot += self.blankv
         candidatures = sorted(self.dcandi.items(), key=lambda p: p[1], reverse=True)
         minvot = ((vtot * self.minper) / 100) - 1
         # Filter the candidatures that have not reached the minimum
